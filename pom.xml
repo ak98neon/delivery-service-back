@@ -13,6 +13,7 @@
     <artifactId>delivery-service-backend</artifactId>
     <version>1.0.0</version>
     <name>delivery-service-backend</name>
+    <packaging>pom</packaging>
 
     <description>Delivery Service Backend</description>
 
@@ -20,6 +21,15 @@
         <java.version>11</java.version>
         <spring-cloud.version>2020.0.2</spring-cloud.version>
     </properties>
+
+    <modules>
+        <module>delivery-scheduler-app</module>
+        <module>delivery-dao-app</module>
+        <module>delivery-service-app</module>
+        <module>delivery-facade-app</module>
+        <module>delivery-rest-api-app</module>
+        <module>delivery-config-server-app</module>
+    </modules>
 
     <dependencies>
         <dependency>
