@@ -6,7 +6,8 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.*;
 
-import com.hashcorp.delivery.dto.ProductDto;
+import com.hashcorp.core.entity.dto.ProductDto;
+import com.hashcorp.service.ProductService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -15,8 +16,10 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ProductsController {
 
+	private final ProductService productService;
+
 	@GetMapping
-	public List<ProductDto> getProducts() {
-		return List.of(new ProductDto("testProductName"));
+	public List<ProductDto> getTopSixProducts() {
+		return productService.getTopSixProducts();
 	}
 }

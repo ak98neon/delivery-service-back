@@ -1,4 +1,4 @@
-package com.hashcorp.delivery.dto;
+package com.hashcorp.core.entity.dto;
 
 import lombok.*;
 
@@ -8,4 +8,6 @@ import lombok.*;
 public class ProductDto {
 
 	private String name;
+	private String description;
+	private String imgUrl;
 }
