@@ -9,6 +9,7 @@
         <version>1.0.0</version>
     </parent>
 
+    <artifactId>delivery-service-app</artifactId>
     <name>delivery-service-app</name>
     <description>Delivery Service app</description>
 
@@ -28,14 +29,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
