@@ -20,13 +20,14 @@
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>2020.0.2</spring-cloud.version>
+        <spring.config-server.version>2.2.3.RELEASE</spring.config-server.version>
     </properties>
 
     <modules>
         <module>delivery-scheduler-app</module>
-        <module>delivery-dao-app</module>
-        <module>delivery-service-app</module>
-        <module>delivery-facade-app</module>
+        <module>delivery-dao-lib</module>
+        <module>delivery-service-lib</module>
+        <module>delivery-facade-lib</module>
         <module>delivery-rest-api-app</module>
         <module>delivery-config-server-app</module>
     </modules>
@@ -75,18 +76,6 @@
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-vault-config</artifactId>
         </dependency>
 
         <dependency>
