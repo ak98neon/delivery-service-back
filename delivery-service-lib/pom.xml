@@ -9,9 +9,9 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>delivery-service-app</artifactId>
-    <name>delivery-service-app</name>
-    <description>Delivery Service app</description>
+    <artifactId>delivery-service-lib</artifactId>
+    <name>delivery-service-lib</name>
+    <description>Delivery Service lib</description>
 
     <properties>
         <java.version>11</java.version>
@@ -27,6 +27,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hashcorp</groupId>
+            <artifactId>delivery-dao-lib</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 

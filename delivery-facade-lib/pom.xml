@@ -8,9 +8,9 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>delivery-facade-app</artifactId>
-    <name>delivery-facade-app</name>
-    <description>Demo project for Spring Boot</description>
+    <artifactId>delivery-facade-lib</artifactId>
+    <name>delivery-facade-lib</name>
+    <description>Delivery Facade Lib</description>
 
     <properties>
         <java.version>11</java.version>

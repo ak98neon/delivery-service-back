@@ -1,9 +1,10 @@
 spring:
   application:
     name: queue
+  config:
+    import: configserver:http://localhost:8989/
   cloud:
     config:
-      uri: http://localhost:8989/resolved
       fail-fast: true
       retry:
         multiplier: 2
