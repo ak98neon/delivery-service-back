@@ -4,6 +4,8 @@ import static java.util.stream.Collectors.toList;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.hashcorp.convertor.ProductConvertor;
@@ -24,7 +26,8 @@ public class ProductService extends AbstractService<Product, ProductRepository, 
 	}
 
 	public List<ProductDto> getTopSixProducts() {
-		return entitiesToDto(repository.findAll());
+		final Page<Product> all = repository.findAll(PageRequest.of(0, 10));
+		return entitiesToDto(all.getContent());
 	}
 
 	public List<ProductDto> getAllProducts() {
