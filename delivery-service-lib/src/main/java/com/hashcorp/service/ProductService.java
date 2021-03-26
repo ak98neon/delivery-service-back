@@ -14,12 +14,10 @@ import com.hashcorp.dao.repository.ProductRepository;
 @Service
 public class ProductService extends AbstractService<Product, ProductRepository, Long> {
 
-	private final ProductRepository repository;
 	private final ProductConvertor productConvertor;
 
-	protected ProductService(ProductRepository repository, ProductConvertor productConvertor) {
+	public ProductService(ProductRepository repository, ProductConvertor productConvertor) {
 		super(repository);
-		this.repository = repository;
 		this.productConvertor = productConvertor;
 	}
 

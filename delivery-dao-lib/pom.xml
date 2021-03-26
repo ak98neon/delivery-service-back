@@ -54,7 +54,6 @@
             <groupId>com.hashcorp</groupId>
             <artifactId>delivery-core-lib</artifactId>
             <version>0.0.1</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 

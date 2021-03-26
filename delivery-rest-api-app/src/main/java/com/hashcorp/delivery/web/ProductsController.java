@@ -18,7 +18,7 @@ public class ProductsController {
 
 	private final ProductService productService;
 
-	@GetMapping
+	@GetMapping("/top")
 	public List<ProductDto> getTopSixProducts() {
 		return productService.getTopSixProducts();
 	}
