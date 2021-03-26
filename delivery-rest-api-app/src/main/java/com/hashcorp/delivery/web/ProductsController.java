@@ -22,4 +22,10 @@ public class ProductsController {
 	public List<ProductDto> getTopSixProducts() {
 		return productService.getTopSixProducts();
 	}
+
+	@GetMapping("/")
+	public List<ProductDto> getAllProducts() {
+		return productService.getAllProducts();
+	}
+
 }

@@ -16,13 +16,23 @@ public class ProductService extends AbstractService<Product, ProductRepository, 
 
 	private final ProductConvertor productConvertor;
 
-	public ProductService(ProductRepository repository, ProductConvertor productConvertor) {
+	public ProductService(ProductRepository repository,
+		ProductConvertor productConvertor) {
+
 		super(repository);
 		this.productConvertor = productConvertor;
 	}
 
 	public List<ProductDto> getTopSixProducts() {
-		return repository.findAll().stream()
+		return entitiesToDto(repository.findAll());
+	}
+
+	public List<ProductDto> getAllProducts() {
+		return entitiesToDto(repository.findAll());
+	}
+
+	public List<ProductDto> entitiesToDto(List<Product> products) {
+		return products.stream()
 			.map(productConvertor::convert)
 			.collect(toList());
 	}
