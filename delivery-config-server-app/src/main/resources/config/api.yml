@@ -1,2 +1,50 @@
+spring:
+  application:
+    name: docker
+  redis:
+    host: localhost
+    port: 6479
+    password: Oe3Zoo9iePha7xeean8Jei0dveiJ8iu8Yohv2thete6LahPhoub5aC3Eiqu7MaiM
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/general
+    username: devel
+    password: devel
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_default: false
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  flyway:
+    locations: classpath:/db/migration,classpath:/db/testdata
+
+  thymeleaf:
+    cache: false
+    mode: HTML
+    prefix: classpath:/templates
+
 server:
   port: 8081
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: health, prometheus
+      base_path:
+      path_mapping:
+        prometheus: metrics
+  endpoint:
+    health:
+      show-details: 'ALWAYS'
+  health:
+    elasticsearch:
+      enabled: false
+  prometheus:
+    security:
+      login: metrics0@advcash.com
+      password: PalP#$%0009
