@@ -1,0 +1,1 @@
+sudo docker volume prune -f

@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: devel
+      POSTGRES_PASSWORD: devel
+      PGDATA: /data/postgres
+    volumes:
+      - ./db_init/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "6432:5432"
+
+  activemq:
+    image: webcenter/activemq
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+
+  redis:
+    image: redis
+    command: redis-server --requirepass Oe3Zoo9iePha7xeean8Jei0dveiJ8iu8Yohv2thete6LahPhoub5aC3Eiqu7MaiM
+    ports:
+      - "6479:6379"
