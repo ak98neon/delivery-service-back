@@ -1,9 +1,11 @@
 package com.hashcorp.service;
 
+import static com.hashcorp.dao.names.cache.CacheNames.*;
 import static java.util.stream.Collectors.toList;
 
 import java.util.List;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -25,11 +27,13 @@ public class ProductService extends AbstractService<Product, ProductRepository, 
 		this.productConvertor = productConvertor;
 	}
 
+	@Cacheable(cacheNames = TOP_SIX_PRODUCTS)
 	public List<ProductDto> getTopSixProducts() {
 		final Page<Product> all = repository.findAll(PageRequest.of(0, 10));
 		return entitiesToDto(all.getContent());
 	}
 
+	@Cacheable(cacheNames = ALL_PRODUCTS)
 	public List<ProductDto> getAllProducts() {
 		return entitiesToDto(repository.findAll());
 	}

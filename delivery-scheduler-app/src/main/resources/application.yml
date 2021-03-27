@@ -1,12 +1,23 @@
 spring:
   application:
     name: scheduler
-  config:
-    import: configserver:http://localhost:8989/
-  cloud:
-    config:
-      fail-fast: true
-      retry:
-        multiplier: 2
-        max-interval: 100000
-        initial-interval: 5000
+
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: health, prometheus
+      base_path:
+      path_mapping:
+        prometheus: metrics
+  endpoint:
+    health:
+      show-details: 'ALWAYS'
+  health:
+    elasticsearch:
+      enabled: false
+  prometheus:
+    security:
+      login: metrics0@advcash.com
+      password: PalP#$%0009

@@ -20,7 +20,6 @@
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>2020.0.2</spring-cloud.version>
-        <spring.config-server.version>2.2.3.RELEASE</spring.config-server.version>
     </properties>
 
     <modules>
@@ -31,7 +30,6 @@
         <module>delivery-service-lib</module>
         <module>delivery-facade-lib</module>
         <module>delivery-rest-api-app</module>
-        <module>delivery-config-server-app</module>
     </modules>
 
     <dependencies>
@@ -59,6 +57,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
     </dependencies>
