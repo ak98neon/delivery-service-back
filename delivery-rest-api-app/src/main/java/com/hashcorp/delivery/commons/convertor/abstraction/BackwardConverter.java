@@ -1,4 +1,4 @@
-package com.hashcorp.delivery.convertor.abstraction;
+package com.hashcorp.delivery.commons.convertor.abstraction;
 
 public interface BackwardConverter<E, DTO> {
 

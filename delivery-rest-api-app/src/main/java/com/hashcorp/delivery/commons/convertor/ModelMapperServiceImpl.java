@@ -1,4 +1,4 @@
-package com.hashcorp.delivery.convertor;
+package com.hashcorp.delivery.commons.convertor;
 
 import static com.hashcorp.delivery.support.Dates.*;
 
@@ -12,7 +12,7 @@ import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import com.hashcorp.delivery.convertor.abstraction.ModelMapperService;
+import com.hashcorp.delivery.commons.convertor.abstraction.ModelMapperService;
 
 import lombok.RequiredArgsConstructor;
 

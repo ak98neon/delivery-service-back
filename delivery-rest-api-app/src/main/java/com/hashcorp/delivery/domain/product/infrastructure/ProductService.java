@@ -9,8 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import com.hashcorp.delivery.convertor.ProductConvertor;
-import com.hashcorp.delivery.domain.product.infrastructure.ProductEntity;
+import com.hashcorp.delivery.commons.convertor.ProductConvertor;
 import com.hashcorp.delivery.domain.product.web.dto.ProductDto;
 import com.hashcorp.dao.repository.ProductRepository;
 

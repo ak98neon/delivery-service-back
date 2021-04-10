@@ -1,4 +1,4 @@
-package com.hashcorp.delivery.convertor;
+package com.hashcorp.delivery.commons.convertor;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

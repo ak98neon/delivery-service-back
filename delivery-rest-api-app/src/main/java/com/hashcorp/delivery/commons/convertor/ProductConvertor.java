@@ -1,9 +1,9 @@
-package com.hashcorp.delivery.convertor;
+package com.hashcorp.delivery.commons.convertor;
 
 import org.springframework.stereotype.Service;
 
-import com.hashcorp.delivery.convertor.abstraction.AbstractSimpleEntityConverter;
-import com.hashcorp.delivery.convertor.abstraction.ModelMapperService;
+import com.hashcorp.delivery.commons.convertor.abstraction.AbstractSimpleEntityConverter;
+import com.hashcorp.delivery.commons.convertor.abstraction.ModelMapperService;
 import com.hashcorp.delivery.domain.product.infrastructure.ProductEntity;
 import com.hashcorp.delivery.domain.product.web.dto.ProductDto;
 

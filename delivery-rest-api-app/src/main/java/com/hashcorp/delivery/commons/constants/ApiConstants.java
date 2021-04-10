@@ -1,4 +1,4 @@
-package com.hashcorp.delivery.constants;
+package com.hashcorp.delivery.commons.constants;
 
 import lombok.experimental.UtilityClass;
 

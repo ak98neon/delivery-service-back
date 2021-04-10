@@ -1,6 +1,6 @@
 package com.hashcorp.delivery.web;
 
-import static com.hashcorp.delivery.constants.ApiConstants.API_VERSION;
+import static com.hashcorp.delivery.commons.constants.ApiConstants.API_VERSION;
 
 import java.util.List;
 
