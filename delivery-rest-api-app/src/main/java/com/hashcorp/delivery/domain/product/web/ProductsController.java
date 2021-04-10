@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.hashcorp.delivery.commons.constants.ApiConstants;
-import com.hashcorp.delivery.domain.product.infrastructure.ProductService;
+import com.hashcorp.delivery.domain.product.model.ProductStorage;
 import com.hashcorp.delivery.domain.product.web.dto.ProductDto;
 import com.hashcorp.delivery.support.Try;
 
@@ -17,19 +17,19 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ProductsController {
 
-	private final ProductService productService;
+	private final ProductStorage products;
 
 	@GetMapping("/top")
 	public ResponseEntity<List<ProductDto>> getTopSixProducts() {
-		return Try.of(productService::getTopSixProducts)
-			.map(p -> ResponseEntity.ok(productService.entitiesToDto(p)))
+		return Try.of(products::getTopSixProducts)
+			.map(p -> ResponseEntity.ok(products.entitiesToDto(p)))
 			.getOrElse(ResponseEntity.notFound().build());
 	}
 
 	@GetMapping("/")
 	public ResponseEntity<List<ProductDto>> getAllProducts() {
-		return Try.of(productService::getAllProducts)
-			.map(p -> ResponseEntity.ok(productService.entitiesToDto(p)))
+		return Try.of(products::getAllProducts)
+			.map(p -> ResponseEntity.ok(products.entitiesToDto(p)))
 			.getOrElse(ResponseEntity.notFound().build());
 	}
 
