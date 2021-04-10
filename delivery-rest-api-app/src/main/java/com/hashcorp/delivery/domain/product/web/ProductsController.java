@@ -1,17 +1,16 @@
-package com.hashcorp.delivery.web;
-
-import static com.hashcorp.delivery.commons.constants.ApiConstants.API_VERSION;
+package com.hashcorp.delivery.domain.product.web;
 
 import java.util.List;
 
 import org.springframework.web.bind.annotation.*;
 
-import com.hashcorp.delivery.domain.product.web.dto.ProductDto;
+import com.hashcorp.core.entity.dto.ProductDto;
+import com.hashcorp.delivery.commons.constants.ApiConstants;
 import com.hashcorp.delivery.domain.product.infrastructure.ProductService;
 
 import lombok.RequiredArgsConstructor;
 
-@RequestMapping("/" + API_VERSION + "/products")
+@RequestMapping("/" + ApiConstants.API_VERSION + "/products")
 @RestController
 @RequiredArgsConstructor
 public class ProductsController {
