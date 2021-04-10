@@ -2,11 +2,13 @@ package com.hashcorp.delivery.domain.product.web;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.hashcorp.core.entity.dto.ProductDto;
 import com.hashcorp.delivery.commons.constants.ApiConstants;
 import com.hashcorp.delivery.domain.product.infrastructure.ProductService;
+import com.hashcorp.delivery.domain.product.web.dto.ProductDto;
+import com.hashcorp.delivery.support.Try;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,13 +20,17 @@ public class ProductsController {
 	private final ProductService productService;
 
 	@GetMapping("/top")
-	public List<ProductDto> getTopSixProducts() {
-		return productService.getTopSixProducts();
+	public ResponseEntity<List<ProductDto>> getTopSixProducts() {
+		return Try.of(productService::getTopSixProducts)
+			.map(p -> ResponseEntity.ok(productService.entitiesToDto(p)))
+			.getOrElse(ResponseEntity.notFound().build());
 	}
 
 	@GetMapping("/")
-	public List<ProductDto> getAllProducts() {
-		return productService.getAllProducts();
+	public ResponseEntity<List<ProductDto>> getAllProducts() {
+		return Try.of(productService::getAllProducts)
+			.map(p -> ResponseEntity.ok(productService.entitiesToDto(p)))
+			.getOrElse(ResponseEntity.notFound().build());
 	}
 
 }

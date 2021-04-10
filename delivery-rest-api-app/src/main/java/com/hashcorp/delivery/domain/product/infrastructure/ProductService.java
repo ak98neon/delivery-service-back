@@ -6,7 +6,6 @@ import static java.util.stream.Collectors.toList;
 import java.util.List;
 
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
@@ -23,19 +22,22 @@ public class ProductService {
 	private final ProductJpaRepository repository;
 
 	@Cacheable(cacheNames = TOP_SIX_PRODUCTS)
-	public List<ProductDto> getTopSixProducts() {
-		final Page<ProductEntity> all = repository.findAll(PageRequest.of(0, 10));
-		return entitiesToDto(all.getContent());
+	public List<ProductEntity> getTopSixProducts() {
+		return repository.findAll(PageRequest.of(0, 10)).getContent();
 	}
 
 	@Cacheable(cacheNames = ALL_PRODUCTS)
-	public List<ProductDto> getAllProducts() {
-		return entitiesToDto(repository.findAll());
+	public List<ProductEntity> getAllProducts() {
+		return repository.findAll();
+	}
+
+	public ProductDto toDTO(ProductEntity productEntity) {
+		return productConvertor.convert(productEntity);
 	}
 
 	public List<ProductDto> entitiesToDto(List<ProductEntity> productEntities) {
 		return productEntities.stream()
-			.map(productConvertor::convert)
+			.map(this::toDTO)
 			.collect(toList());
 	}
 }
