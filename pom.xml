@@ -23,12 +23,6 @@
     </properties>
 
     <modules>
-        <module>delivery-core-lib</module>
-        <module>delivery-scheduler-app</module>
-        <module>delivery-queue-app</module>
-        <module>delivery-dao-lib</module>
-        <module>delivery-service-lib</module>
-        <module>delivery-facade-lib</module>
         <module>delivery-rest-api-app</module>
     </modules>
 
