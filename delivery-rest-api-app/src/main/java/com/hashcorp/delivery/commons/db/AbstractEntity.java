@@ -1,4 +1,4 @@
-package com.hashcorp.delivery.entity.domain;
+package com.hashcorp.delivery.commons.db;
 
 import static javax.persistence.GenerationType.IDENTITY;
 

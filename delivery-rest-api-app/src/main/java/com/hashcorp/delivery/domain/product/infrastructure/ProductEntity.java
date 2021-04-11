@@ -3,16 +3,16 @@ package com.hashcorp.delivery.domain.product.infrastructure;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
+import com.hashcorp.delivery.commons.db.AbstractEntity;
 import com.hashcorp.delivery.domain.product.model.AvailableProduct;
 import com.hashcorp.delivery.domain.product.model.Product;
-import com.hashcorp.delivery.entity.domain.AbstractEntity;
 
 import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@Entity(name = "product")
 public class ProductEntity extends AbstractEntity {
 
 	private String name;

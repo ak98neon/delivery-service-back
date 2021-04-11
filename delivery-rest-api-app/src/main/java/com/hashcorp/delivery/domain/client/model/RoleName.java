@@ -1,4 +1,4 @@
-package com.hashcorp.delivery.entity.domain.user;
+package com.hashcorp.delivery.domain.client.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

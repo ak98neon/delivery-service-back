@@ -1,4 +1,4 @@
-package com.hashcorp.delivery.entity.domain.user;
+package com.hashcorp.delivery.domain.client.model;
 
 import java.io.Serializable;
 import java.util.*;
@@ -9,7 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.hashcorp.delivery.entity.domain.AuditableEntity;
+import com.hashcorp.delivery.commons.db.AuditableEntity;
 
 import lombok.Data;
 import net.minidev.json.annotate.JsonIgnore;

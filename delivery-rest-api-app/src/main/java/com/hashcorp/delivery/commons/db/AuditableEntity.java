@@ -1,4 +1,4 @@
-package com.hashcorp.delivery.entity.domain;
+package com.hashcorp.delivery.commons.db;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
