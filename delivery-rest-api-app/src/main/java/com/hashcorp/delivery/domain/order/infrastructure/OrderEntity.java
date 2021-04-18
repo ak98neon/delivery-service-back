@@ -19,10 +19,12 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "order")
+@Table(name = "order")
 public class OrderEntity extends AuditableEntity {
 
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Set<ProductEntity> products;
+	@Column(name = "total_price")
 	private BigDecimal totalPrice;
 	private int quantity;
 	private OrderStatus status;
